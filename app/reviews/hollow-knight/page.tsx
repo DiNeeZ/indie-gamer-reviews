@@ -5,6 +5,13 @@ export default function HollowKnightPage() {
   return (
     <div>
       <Heading>Hollow Knight</Heading>
+      <img
+        src="/images/hollow-knight.jpg"
+        alt="hollow knight"
+        width={640}
+        height={360}
+        className="mb-2 rounded"
+      />
       <p>
         Metroidvania video game developed and published by independent developer
         Team Cherry. The player controls the Knight, an insectoid warrior
