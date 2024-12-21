@@ -9,7 +9,7 @@ export default function NavBar() {
             href="/"
             className="font-medium text-orange-800 hover:underline"
           >
-            Home Test
+            Home
           </Link>
         </li>
         <li>
