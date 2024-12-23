@@ -10,7 +10,10 @@ export default function Heading({
   children,
   variant,
 }: PropsWithChildren<HeadingProps>) {
-  if (!variant) return <h1 className="pb-3 text-2xl font-bold">{children}</h1>;
+  if (!variant)
+    return (
+      <h1 className="font-orbitron pb-3 text-2xl font-bold">{children}</h1>
+    );
 
   const HeadingTag = variant;
 
@@ -21,6 +24,8 @@ export default function Heading({
   };
 
   return (
-    <HeadingTag className={headingsClassNames[variant]}>{children}</HeadingTag>
+    <HeadingTag className={`${headingsClassNames[variant]} font-orbitron`}>
+      {children}
+    </HeadingTag>
   );
 }

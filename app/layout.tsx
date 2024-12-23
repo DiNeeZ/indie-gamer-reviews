@@ -1,18 +1,18 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+
+import NavBar from "../components/NavBar";
+import { Orbitron } from "next/font/google";
 
 import "./global.css";
-import NavBar from "../components/NavBar";
 
 export const metadata: Metadata = {
   title: "Next Reviews",
   description: "Interesting Next JS Tutorial",
 };
 
-const poppins = Poppins({
-  weight: ["400", "500", "700"],
+const orbitron = Orbitron({
   subsets: ["latin"],
+  variable: "--orbitron-font",
 });
 
 interface Props {
@@ -21,12 +21,14 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={orbitron.variable} suppressHydrationWarning>
       <body
-        className={`${poppins.className} flex min-h-screen flex-col bg-orange-50 px-4 py-2 antialiased`}
+        className={`flex min-h-screen flex-col bg-orange-50 px-4 py-2 antialiased`}
       >
         <header>
-          <NavBar />
+          <div className="container mx-auto">
+            <NavBar />
+          </div>
         </header>
         <main className="grow py-3">{children}</main>
         <footer className="border-t pb-3 pt-5 text-center text-xs">
