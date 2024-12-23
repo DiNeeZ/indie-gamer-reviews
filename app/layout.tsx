@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import NavBar from "../components/NavBar";
-import { Orbitron } from "next/font/google";
 
+import { exo2, orbitron } from "./fonts";
 import "./global.css";
 
 export const metadata: Metadata = {
@@ -10,18 +10,17 @@ export const metadata: Metadata = {
   description: "Interesting Next JS Tutorial",
 };
 
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  variable: "--orbitron-font",
-});
-
 interface Props {
   children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" className={orbitron.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${orbitron.variable} ${exo2.variable}`}
+      suppressHydrationWarning
+    >
       <body
         className={`flex min-h-screen flex-col bg-orange-50 px-4 py-2 antialiased`}
       >
